@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    #customers {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    #customers tr:hover {background-color: #ddd;}
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+    }
+    </style>
+  </head>
+
+  <body>
+    <p> Thank you for Choosing <strong><%= @reservation.hotel.name %></strong> .</p>
+    <p> It is our pleasure to confirm your reservation. Please check the below details </p>
+    <table id="customers">
+      <tr>
+        <th>Hotel Name</th>
+        <td><%= @reservation.hotel.name %></td>
+      </tr>
+      <tr>
+        <th>Reservation Date</th>
+        <td><%= @reservation.booking_date %></td>
+      </tr>
+      <tr>
+        <th>Reservation From</th>
+        <td><%= @reservation.booking_from.strftime("%H:%M") %></td>
+      </tr>
+      <tr>
+        <th>Reservation To</th>
+        <td><%= @reservation.booking_to.strftime("%H:%M") %></td>
+      </tr>
+      <tr>
+        <th>Reservation To</th>
+        <td><%= @reservation.booking_to.strftime("%H:%M") %></td>
+      </tr>
+      <tr>
+        <th>No. Of Guests</th>
+        <td><%= @reservation.num_of_users %></td>
+      </tr>
+    </table>
+  </body>
+</html>
