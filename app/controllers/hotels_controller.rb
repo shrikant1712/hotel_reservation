@@ -1,4 +1,7 @@
 class HotelsController < ApplicationController
+
+  before_action :set_hotel, only: [:show, :update, :destroy]
+
   def index
     @hotels = Hotel.all
     json_response(@hotels)
